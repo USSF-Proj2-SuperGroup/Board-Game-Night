@@ -1,12 +1,15 @@
 package com.BoardGameNight.registration.controllers;
 
 import com.BoardGameNight.registration.model.ERole;
+import com.BoardGameNight.registration.model.Group;
 import com.BoardGameNight.registration.model.Role;
 import com.BoardGameNight.registration.model.User;
+import com.BoardGameNight.registration.payload.request.GroupRequest;
 import com.BoardGameNight.registration.payload.request.LoginRequest;
 import com.BoardGameNight.registration.payload.request.SignupRequest;
 import com.BoardGameNight.registration.payload.response.JwtResponse;
 import com.BoardGameNight.registration.payload.response.MessageResponse;
+import com.BoardGameNight.registration.repository.GroupRepository;
 import com.BoardGameNight.registration.repository.RoleRepository;
 import com.BoardGameNight.registration.repository.UserRepository;
 import com.BoardGameNight.registration.security.jwt.JwtUtils;
@@ -28,13 +31,16 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    GroupRepository groupRepository;
 
     @Autowired
     RoleRepository roleRepository;
@@ -119,5 +125,21 @@ public class AuthController {
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+    @PostMapping("/game-group")
+    public ResponseEntity<?> registerGroup(@Valid @RequestBody GroupRequest groupRequest) {
+        if (groupRepository.existsByName(groupRequest.getName())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Group name is already taken!"));
+        }
+
+        // Create New Group
+        Group group = new Group(groupRequest.getName(),
+                groupRequest.getDescription());
+
+        groupRepository.save(group);
+
+        return ResponseEntity.ok(new MessageResponse("Group successfully created!"));
     }
 }
