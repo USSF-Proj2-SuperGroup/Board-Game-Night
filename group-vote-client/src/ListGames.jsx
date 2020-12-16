@@ -5,7 +5,7 @@ const ListGames = () => {
 
     const getGameList = async () => {
         try {
-            var id = 1;
+            var id = 2;
             const response = await fetch(`http://localhost:8080/groupvote/${id}`);
             const jsonData = await response.json();
       
@@ -32,19 +32,21 @@ const ListGames = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {gamesList.map(each => (
-                        <tr key = {each.Pool_ID}>
-                            <td>{each.Game_ID}</td>
-                            <td>{each.Game_votes}</td>
+                    {gameList.map(each => (
+                        <tr key = {each.id}>
+                            <td>{each.gameID}</td>
+                            <td>{each.gameVotes}</td>
                             <td>
                                 <button
-                                    onClick= {() => upvoteGame(each.Pool_ID)}>
+                                    // onClick= {() => upvoteGame(each.id)}
+                                    >
 
                                 </button>
                             </td>
                             <td>
                                 <button
-                                    onClick= {() => upvoteGame(each.Pool_ID)}>
+                                    // onClick= {() => upvoteGame(each.id)}
+                                    >
 
                                 </button>
                             </td>
@@ -56,3 +58,4 @@ const ListGames = () => {
     )
 
 }
+export default ListGames;

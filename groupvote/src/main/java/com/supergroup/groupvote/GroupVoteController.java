@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/groupvote")
 public class GroupVoteController {
@@ -18,8 +20,8 @@ public class GroupVoteController {
     public Iterable<GroupVote> list() {
         return this.repository.findAll();
     }
-    @GetMapping("/{id}")
-    public GroupVote read(@PathVariable Integer id){
-        return this.repository.findById(id).get();
+    @GetMapping("/{gameGroupID}")
+    public List<GroupVote> read(@PathVariable int gameGroupID){
+        return this.repository.findByGameGroupID(gameGroupID);
     }
 }

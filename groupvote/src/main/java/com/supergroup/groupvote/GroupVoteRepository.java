@@ -2,7 +2,9 @@ package com.supergroup.groupvote;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface GroupVoteRepository extends CrudRepository<GroupVote, Integer> {
+import java.util.List;
 
+public interface GroupVoteRepository extends CrudRepository<GroupVote, Integer> {
+    List<GroupVote> findByGameGroupID(int gameGroupID);
 
 }
