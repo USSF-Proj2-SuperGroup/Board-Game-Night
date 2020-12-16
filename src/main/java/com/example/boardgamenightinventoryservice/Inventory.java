@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity //table view
-@Table(name = "inventory")
+@Table(name = "InventoryView")
 public class Inventory {
-
+//... am I even using this?
 }
