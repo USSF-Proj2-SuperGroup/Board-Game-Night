@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 //TODO: get current userID
-// user ID will likely be passed in via HTTP response
+// user ID will likely be passed in via HTTP response...
 
+//
 
 @RestController
 @RequestMapping("/inventory")
 public class InventoryController {
-
 
     @Autowired
     private final InventoryRepository repository;

@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "Games")
 public class Game {
 
-    @Id
+    @Id //Specifying Primary Key of the Game Entity
     @Column(columnDefinition = "INTEGER",
             name = "Game_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
