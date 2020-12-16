@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="770ac151-6243-49e6-a568-72ec155717e5" name="Default Changelist" comment="somehow these weren't added during my earlier commits?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

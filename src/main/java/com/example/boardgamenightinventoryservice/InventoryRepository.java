@@ -9,15 +9,15 @@ import java.util.List;
 public interface InventoryRepository extends CrudRepository<Inventory, Long>{
 
     @Query(value="SELECT * FROM Games WHERE User_ID = ?1") //Custom Query - get User's Inventory
-    List<Game> findUserGames(int userID);
+    List<Game> findUserGames(Long userID);
 
     @Query(value="SELECT * FROM Games WHERE User_ID = ?1 ORDER BY Game_Name") //Custom Query - sort User's Inventory
-    List<Game> sortUserGames(int userID);
+    List<Game> sortUserGames(Long userID);
 
     @Query(value="SELECT * FROM Games WHERE User_ID = ?1 AND In_Game_Pool=1") //Custom Query - get User's Games That Are In Game Pool
-    List<Game> filterUserGames(int userID);
+    List<Game> filterUserGames(Long userID);
 
     @Modifying
     @Query(value="DELETE FROM Games WHERE User_ID = ?1 AND Game_ID = ?2") //Custom Query - delete User's Game from User's Inventory
-    void deleteInventoryItem(int userID, int gameID);
+    void deleteInventoryItem(Long userID, Long gameID);
 }
