@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 
 const ListGames = () => {
     const [gameList, setGameList] = useState([]);
-    //const [gameNames, setGameNames] = useState([]);
+    const [gameNames, setGameNames] = useState([]);
 
     const getGameList = async () => {
         try {
@@ -15,18 +15,21 @@ const ListGames = () => {
             console.error(err.message);
           }
     };
-    // const getGameNames = async () => {
-    //     try {
-    //         const response = await fetch(`http://localhost:8080/`);
-    //         const jsonData = await response.json();
-    //         setGameNames(jsonData);
-    //     } catch (err) {
-    //         console.error(err.message);
-    //     }
-    // };
+    const getGameNames = async () => {
+        try {
+            const response = await fetch(`http://localhost:8080/games`);
+            const jsonData = await response.json();
+            setGameNames(jsonData);
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
 
     useEffect(() => {
         getGameList();
+    }, []);
+    useEffect(() => {
+        getGameNames();
     }, []);
 
     return (
@@ -44,7 +47,8 @@ const ListGames = () => {
                 <tbody>
                     {gameList.map(each => (
                         <tr key = {each.id}>
-                            <td>{each.gameID}</td>
+                            <td>{gameNames[each.gameID - 1].gameName}</td>
+                            {/* <td>{each.gameID}</td> */}
                             <td>{each.gameVotes}</td>
                             <td>
                                 <button
