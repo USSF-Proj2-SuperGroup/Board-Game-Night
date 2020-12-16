@@ -1,6 +1,5 @@
 package com.supergroup.groupvote;
 
-<<<<<<< HEAD
 import javax.persistence.*;
 
 @Entity
@@ -20,8 +19,38 @@ public class GroupVote {
 
     @Column(name = "Game_votes")
     int gameVotes;
-=======
-public class GroupVote {
->>>>>>> efd5ad5a11f30fd2101b5f2fee0faacb4966a306
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public int getGameGroupID() {
+        return gameGroupID;
+    }
+
+    public void setGameGroupID(int gameGroupID) {
+        this.gameGroupID = gameGroupID;
+    }
+
+    public int getGameID() {
+        return gameID;
+    }
+
+    public void setGameID(int gameID) {
+        this.gameID = gameID;
+    }
+
+    public int getGameVotes() {
+        return gameVotes;
+    }
+
+    public void setGameVotes(int gameVotes) {
+        this.gameVotes = gameVotes;
+    }
+
 
 }
