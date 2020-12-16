@@ -1,9 +1,9 @@
 CREATE DATABASE IF NOT EXISTS `games`;
 CREATE DATABASE IF NOT EXISTS `games_test`;
 
+
 CREATE USER IF NOT EXISTS 'root'@'localhost' IDENTIFIED BY 'local';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
-
 
 
 DROP TABLE IF EXISTS Game_Group;
@@ -12,14 +12,13 @@ DROP TABLE IF EXISTS Games;
 DROP TABLE IF EXISTS Game_Pool;
 
 
-
-
 CREATE TABLE Game_Group(
 	Game_Group_ID INTEGER AUTO_INCREMENT,
 	Group_Name TEXT NOT NULL,
 	Game_Description TEXT,
 	PRIMARY KEY (Game_Group_ID)
 );
+
 
 CREATE TABLE User(
 	User_ID INTEGER AUTO_INCREMENT,
@@ -36,6 +35,7 @@ CREATE TABLE User(
 		REFERENCES Game_Group(Game_Group_ID)
 );
 
+
 CREATE TABLE Games(
 	Game_ID INTEGER AUTO_INCREMENT,
     User_ID INTEGER NOT NULL,
@@ -49,6 +49,7 @@ CREATE TABLE Games(
 		REFERENCES User(User_ID)
 	
 );
+
 
 CREATE TABLE Game_Pool(
 	Pool_ID INTEGER AUTO_INCREMENT,
@@ -65,12 +66,9 @@ CREATE TABLE Game_Pool(
 );
 
 
-
-
 INSERT INTO Game_Group (Group_Name, Game_Description) VALUES ('Friday Night Fun', 'The Best Friday Group');
 INSERT INTO Game_Group (Group_Name, Game_Description) VALUES ('Sunday Funday', 'Board games and Sports? Whats better!');
 INSERT INTO Game_Group (Group_Name, Game_Description) VALUES ('Saturday Showdown', 'Where its western games only!');
-
 
 
 INSERT INTO User (Game_Group_ID, Username, Email_Address, Pass_Word, First_Name, Last_Name, User_Role) 
