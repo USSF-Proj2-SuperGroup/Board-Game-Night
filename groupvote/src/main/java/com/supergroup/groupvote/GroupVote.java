@@ -1,5 +1,6 @@
 package com.supergroup.groupvote;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 
 @Entity
@@ -19,5 +20,8 @@ public class GroupVote {
 
     @Column(name = "Game_votes")
     int gameVotes;
+=======
+public class GroupVote {
+>>>>>>> efd5ad5a11f30fd2101b5f2fee0faacb4966a306
 
 }
