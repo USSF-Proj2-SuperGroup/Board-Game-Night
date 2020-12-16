@@ -4,8 +4,14 @@ import ListGames from "./ListGames";
 function App() {
   return (
     <div>
-      <h2>Game Vote Client</h2>
+      <div class="container">
+        <div class="jumbotron">
+          <h1>Game Vote Client</h1>
+          <p>Vote on your favorite game to play.</p>
+        </div>
+      </div>
       <ListGames></ListGames>
+      
     </div>
   );
 }

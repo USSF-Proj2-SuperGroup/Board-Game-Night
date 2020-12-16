@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 
 const ListGames = () => {
     const [gameList, setGameList] = useState([]);
+    //const [gameNames, setGameNames] = useState([]);
 
     const getGameList = async () => {
         try {
@@ -14,6 +15,15 @@ const ListGames = () => {
             console.error(err.message);
           }
     };
+    // const getGameNames = async () => {
+    //     try {
+    //         const response = await fetch(`http://localhost:8080/`);
+    //         const jsonData = await response.json();
+    //         setGameNames(jsonData);
+    //     } catch (err) {
+    //         console.error(err.message);
+    //     }
+    // };
 
     useEffect(() => {
         getGameList();
@@ -22,7 +32,7 @@ const ListGames = () => {
     return (
         <Fragment>
             {" "}
-            <table>
+            <table class="table mt-5 text-center">
                 <thead>
                     <tr>
                         <th>Game Name</th>
@@ -38,16 +48,18 @@ const ListGames = () => {
                             <td>{each.gameVotes}</td>
                             <td>
                                 <button
+                                    type="button" class="btn btn-success"
                                     // onClick= {() => upvoteGame(each.id)}
                                     >
-
+                                    I Want to Play
                                 </button>
                             </td>
                             <td>
                                 <button
+                                    type="button" class="btn btn-danger"
                                     // onClick= {() => upvoteGame(each.id)}
                                     >
-
+                                    Hell no
                                 </button>
                             </td>
                         </tr>
