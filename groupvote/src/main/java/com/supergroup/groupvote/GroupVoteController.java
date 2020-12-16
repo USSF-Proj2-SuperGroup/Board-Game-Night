@@ -23,9 +23,15 @@ public class GroupVoteController {
     }
 
     @PatchMapping("/upvote")
-    public GroupVote patch(@RequestBody GroupVote input){
+    public GroupVote upvote(@RequestBody GroupVote input){
         GroupVote gv = this.repository.findById(input.getId()).get();
         gv.setGameVotes(gv.getGameVotes() + 1);
+        return this.repository.save(gv);
+    }
+    @PatchMapping("/downvote")
+    public GroupVote downvote(@RequestBody GroupVote input){
+        GroupVote gv = this.repository.findById(input.getId()).get();
+        gv.setGameVotes(gv.getGameVotes() - 1);
         return this.repository.save(gv);
     }
 }
