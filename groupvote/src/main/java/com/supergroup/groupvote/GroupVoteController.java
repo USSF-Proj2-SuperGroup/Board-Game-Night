@@ -19,7 +19,7 @@ public class GroupVoteController {
         return this.repository.findAll();
     }
     @GetMapping("/{id}")
-    public GroupVote read(@PathVariable Long id){
+    public GroupVote read(@PathVariable Integer id){
         return this.repository.findById(id).get();
     }
 }
