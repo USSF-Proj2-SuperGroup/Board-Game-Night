@@ -25,7 +25,7 @@ CREATE TABLE User(
 	User_ID INTEGER AUTO_INCREMENT,
 	Game_Group_ID INTEGER NOT NULL,
 	Username VARCHAR(50) UNIQUE NOT NULL,
-	Email_Address VARCHAR(50) UNIQUE NOT NULL,
+	Email VARCHAR(50) UNIQUE NOT NULL,
 	Pass_Word VARCHAR(50) NOT NULL,
 	First_Name TEXT NOT NULL,
 	Last_Name TEXT NOT NULL,
@@ -73,15 +73,15 @@ INSERT INTO Game_Group (Group_Name, Game_Description) VALUES ('Saturday Showdown
 
 
 
-INSERT INTO User (Game_Group_ID, Username, Email_Address, Pass_Word, First_Name, Last_Name, User_Role) 
+INSERT INTO User (Game_Group_ID, Username, Email, Pass_Word, First_Name, Last_Name, User_Role) 
 VALUES (1, 'Rob', 'rob@us.af.mil', 'MyPassword', 'Rob', 'Cameron', 'user');
-INSERT INTO User (Game_Group_ID, Username, Email_Address, Pass_Word, First_Name, Last_Name, User_Role) 
+INSERT INTO User (Game_Group_ID, Username, Email, Pass_Word, First_Name, Last_Name, User_Role) 
 VALUES (1, 'Peter', 'peter@us.af.mil', 'MyPassword2', 'Peter', 'Vayda', 'user');
-INSERT INTO User (Game_Group_ID, Username, Email_Address, Pass_Word, First_Name, Last_Name, User_Role) 
+INSERT INTO User (Game_Group_ID, Username, Email, Pass_Word, First_Name, Last_Name, User_Role) 
 VALUES (2, 'Ben', 'ben@us.af.mil', 'MyPassword3', 'Ben', 'Kehe', 'user');
-INSERT INTO User (Game_Group_ID, Username, Email_Address, Pass_Word, First_Name, Last_Name, User_Role) 
+INSERT INTO User (Game_Group_ID, Username, Email, Pass_Word, First_Name, Last_Name, User_Role) 
 VALUES (2, 'Donna', 'donna@us.af.mil', 'MyPassword4', 'Donna', 'Farris', 'user');
-INSERT INTO User (Game_Group_ID, Username, Email_Address, Pass_Word, First_Name, Last_Name, User_Role) 
+INSERT INTO User (Game_Group_ID, Username, Email, Pass_Word, First_Name, Last_Name, User_Role) 
 VALUES (3, 'Dameon', 'dameon@us.af.mil', 'MyPassword5', 'Dameon', 'Adolphin', 'user');
 
 
