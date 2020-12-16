@@ -1,9 +1,6 @@
 package com.supergroup.groupvote;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,12 @@ public class GroupVoteController {
     @GetMapping("/{gameGroupID}")
     public List<GroupVote> read(@PathVariable int gameGroupID){
         return this.repository.findByGameGroupID(gameGroupID);
+    }
+
+    @PatchMapping("/upvote")
+    public GroupVote patch(@RequestBody GroupVote input){
+        GroupVote gv = this.repository.findById(input.getId()).get();
+        gv.setGameVotes(gv.getGameVotes() + 1);
+        return this.repository.save(gv);
     }
 }
