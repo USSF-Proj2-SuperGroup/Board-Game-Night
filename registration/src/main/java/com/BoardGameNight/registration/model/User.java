@@ -37,6 +37,21 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "user_games",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "game_id"))
+    private Set<Games> games = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "user_wishlist",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "game_id"))
+    private Set<Games> wishlist = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private Set<Group> groups = new HashSet<>();
+
     public User() {
     }
 
@@ -84,5 +99,29 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Set<Games> getGames() {
+        return games;
+    }
+
+    public void setGames(Set<Games> games) {
+        this.games = games;
+    }
+
+    public Set<Games> getWishlist() {
+        return wishlist;
+    }
+
+    public void setWishlist(Set<Games> wishlist) {
+        this.wishlist = wishlist;
+    }
+
+    public Set<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Set<Group> groups) {
+        this.groups = groups;
     }
 }

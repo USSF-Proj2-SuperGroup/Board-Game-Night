@@ -1,15 +1,12 @@
 package com.BoardGameNight.registration.controllers;
 
 import com.BoardGameNight.registration.model.ERole;
-import com.BoardGameNight.registration.model.Group;
 import com.BoardGameNight.registration.model.Role;
 import com.BoardGameNight.registration.model.User;
-import com.BoardGameNight.registration.payload.request.GroupRequest;
 import com.BoardGameNight.registration.payload.request.LoginRequest;
 import com.BoardGameNight.registration.payload.request.SignupRequest;
 import com.BoardGameNight.registration.payload.response.JwtResponse;
 import com.BoardGameNight.registration.payload.response.MessageResponse;
-import com.BoardGameNight.registration.repository.GroupRepository;
 import com.BoardGameNight.registration.repository.RoleRepository;
 import com.BoardGameNight.registration.repository.UserRepository;
 import com.BoardGameNight.registration.security.jwt.JwtUtils;
@@ -61,11 +58,19 @@ public class AuthController {
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
+        List<String> games = userDetails.getGames().stream()
+                .map(game -> game.getGame_api_id())
+                .collect(Collectors.toList());
+        List<String> groups = userDetails.getGroups().stream()
+                .map(group -> group.getName())
+                .collect(Collectors.toList());
 
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
+                games,
+                groups,
                 roles));
     }
 
