@@ -18,7 +18,7 @@ public class InventoryController {
     @Autowired
     private final InventoryRepository repository;
 
-    private Long currentUserID; // read local storage
+    private Integer currentUserID = 1; // read local storage
 
     public InventoryController(InventoryRepository repository) {
         this.repository = repository;
@@ -35,7 +35,7 @@ public class InventoryController {
     }
 
     @GetMapping("/getCookieUserID")
-    public void readCookie(@CookieValue(value = "userID", defaultValue = "1") Long userID) {
+    public void readCookie(@CookieValue(value = "userID", defaultValue = "1") Integer userID) {
         currentUserID = userID;
     }
 
@@ -49,13 +49,13 @@ public class InventoryController {
         return this.repository.sortUserGames(currentUserID);
     }
 
-    @GetMapping("/filter") //Filter Inventory By In_Game_Pool:
-    public Iterable<Inventory> filter() {
-        return this.repository.filterUserGames(currentUserID);
-    }
+//    @GetMapping("/filter") //Filter Inventory By In_Game_Pool:
+//    public Iterable<Inventory> filter() {
+//        return this.repository.filterUserGames(currentUserID);
+//    }
 
     @DeleteMapping("/delete/{gameID}") //Delete Inventory Item By Game ID:
-    public void delete(@PathVariable("gameID") Long gameID) {
+    public void delete(@PathVariable("gameID") String gameID) {
         this.repository.deleteInventoryItem(currentUserID, gameID);
     }
 }
