@@ -1,10 +1,21 @@
 package com.example.boardgamenightinventoryservice;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity //table view
-@Table(name = "InventoryView")
-public class Inventory {
-//... am I even using this?
+@Entity
+@Table(name="Inventory")
+@org.hibernate.annotations.Immutable
+public class Inventory implements Serializable {
+    @Id
+    @Column(name="Inventory_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long inventoryID;
+
+    public Long getInventoryID(){
+        return this.inventoryID;
+    }
+    public void setInventoryID(Long id){
+        this.inventoryID = id;
+    }
 }

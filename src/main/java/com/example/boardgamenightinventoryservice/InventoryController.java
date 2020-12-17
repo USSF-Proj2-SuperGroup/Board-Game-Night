@@ -18,7 +18,7 @@ public class InventoryController {
     @Autowired
     private final InventoryRepository repository;
 
-    private Long currentUserID;
+    private Long currentUserID; // read local storage
 
     public InventoryController(InventoryRepository repository) {
         this.repository = repository;
@@ -34,23 +34,23 @@ public class InventoryController {
         return "No cookies";
     }
 
-    @GetMapping("")
+    @GetMapping("/getCookieUserID")
     public void readCookie(@CookieValue(value = "userID", defaultValue = "1") Long userID) {
         currentUserID = userID;
     }
 
     @GetMapping("/all") //Get Games by User:
-    public Iterable<Game> all() {
+    public Iterable<Inventory> all() {
         return this.repository.findUserGames(currentUserID);
     }
 
     @GetMapping("/sort") //Sort Inventory Alphabetically by Game Name:
-    public Iterable<Game> sort() {
+    public Iterable<Inventory> sort() {
         return this.repository.sortUserGames(currentUserID);
     }
 
     @GetMapping("/filter") //Filter Inventory By In_Game_Pool:
-    public Iterable<Game> filter() {
+    public Iterable<Inventory> filter() {
         return this.repository.filterUserGames(currentUserID);
     }
 
@@ -64,13 +64,7 @@ public class InventoryController {
 //to pass in json reference project: spring-json-endpoints
 //for mysql reference project: mysql
 
-
 // to connect in MySQL SQL Shell > \connect root@localhost:3309
 // use mydb to connect to the game db
 // show tables; to see a list of all tables in mydb
 // describe <table name>; to see all of the columns in <table name>
-
-//CREATE VIEW InventoryView AS
-//SELECT ...
-//FROM Games
-//WHERE User_ID = <current user id>

@@ -70,6 +70,7 @@ public class Game {
     public Boolean getInWishlist() {
         return inWishlist;
     }
+
     public void setInWishlist(Boolean bool) {
         this.inWishlist = bool;
     }

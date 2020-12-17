@@ -7,9 +7,10 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 
 
 DROP TABLE IF EXISTS Game_Group;
-DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Games;
 DROP TABLE IF EXISTS Game_Pool;
+DROP VIEW IF EXISTS Inventory;
 
 
 CREATE TABLE Game_Group(
@@ -20,7 +21,7 @@ CREATE TABLE Game_Group(
 );
 
 
-CREATE TABLE User(
+CREATE TABLE Users(
 	User_ID INTEGER AUTO_INCREMENT,
 	Game_Group_ID INTEGER NOT NULL,
 	Username VARCHAR(50) UNIQUE NOT NULL,
@@ -39,14 +40,14 @@ CREATE TABLE User(
 CREATE TABLE Games(
 	Game_ID INTEGER AUTO_INCREMENT,
     User_ID INTEGER NOT NULL,
-	Game_api_ID TEXT NOT NULL,
+	Game_Api_ID TEXT NOT NULL,
 	Game_Name TEXT NOT NULL,
 	In_Game_Pool BOOLEAN NOT NULL,
 	In_Wishlist BOOLEAN NOT NULL,
 	PRIMARY KEY (Game_ID),
 	CONSTRAINT User_Game_FK 
 		FOREIGN KEY(User_ID) 
-		REFERENCES User(User_ID)
+		REFERENCES Users(User_ID)
 	
 );
 
@@ -64,6 +65,12 @@ CREATE TABLE Game_Pool(
 		FOREIGN KEY (Game_ID) 
 		REFERENCES Games(Game_ID)
 );
+
+CREATE VIEW Inventory AS
+SELECT *
+FROM Users
+JOIN Games
+ON Games.User_ID = Users.User_ID;
 
 
 INSERT INTO Game_Group (Group_Name, Game_Description) VALUES ('Friday Night Fun', 'The Best Friday Group');
