@@ -1,9 +1,6 @@
 package com.BoardGameNight.registration.payload.response;
 
-import com.BoardGameNight.registration.model.Group;
-
 import java.util.List;
-import java.util.Set;
 
 public class JwtResponse {
     private String token;
@@ -12,15 +9,13 @@ public class JwtResponse {
     private String username;
     private String email;
     private List<String> roles;
-    private Set<Group> groups;
 
-    public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles, Set<Group> groups) {
+    public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
         this.roles = roles;
-        this.groups = groups;
     }
 
     public String getAccessToken() {
@@ -65,9 +60,5 @@ public class JwtResponse {
 
     public List<String> getRoles() {
         return roles;
-    }
-
-    public Set<Group> getGroups(){
-        return groups;
     }
 }

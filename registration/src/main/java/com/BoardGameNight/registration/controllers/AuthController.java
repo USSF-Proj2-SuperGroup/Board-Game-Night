@@ -40,9 +40,6 @@ public class AuthController {
     UserRepository userRepository;
 
     @Autowired
-    GroupRepository groupRepository;
-
-    @Autowired
     RoleRepository roleRepository;
 
     @Autowired
@@ -65,14 +62,11 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-                roles,
-                userDetails.getGroup()
-                ));
+                roles));
     }
 
     @PostMapping("/signup")
@@ -128,21 +122,5 @@ public class AuthController {
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-    }
-    @PostMapping("/game-group")
-    public ResponseEntity<?> registerGroup(@Valid @RequestBody GroupRequest groupRequest) {
-        if (groupRepository.existsByName(groupRequest.getName())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Group name is already taken!"));
-        }
-
-        // Create New Group
-        Group group = new Group(groupRequest.getName(),
-                groupRequest.getDescription());
-
-        groupRepository.save(group);
-
-        return ResponseEntity.ok(new MessageResponse("Group successfully created!"));
     }
 }

@@ -3,7 +3,7 @@ package com.BoardGameNight.registration.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="roles")
+@Table(name = "roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,4 +37,3 @@ public class Role {
         this.name = name;
     }
 }
-
