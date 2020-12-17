@@ -1,12 +1,18 @@
 import React, { Fragment, useEffect, useState } from "react";
+import axios from 'axios';
 
 const ListGames = () => {
     const [gameList, setGameList] = useState([]);
     const [gameNames, setGameNames] = useState([]);
 
+
+    const getPageData = async () => {
+        getGameNames();
+        getGameList();
+    }
     const getGameList = async () => {
         try {
-            var id = 1;
+            var id = 2;
             const response = await fetch(`http://localhost:8080/groupvote/${id}`);
             const jsonData = await response.json();
       
@@ -15,43 +21,71 @@ const ListGames = () => {
             console.error(err.message);
           }
     };
-    // const getGameNames = async () => {
-    //     try {
-    //         const response = await fetch(`http://localhost:8080/games`);
-    //         const jsonData = await response.json();
-    //         setGameNames(jsonData);
-    //     } catch (err) {
-    //         console.error(err.message);
-    //     }
-    // };
+    const getGameNames = async () => {
+        try {
+            const response = await fetch(`http://localhost:8080/games`);
+            const jsonData = await response.json();
+            setGameNames(jsonData);
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
 
-    // useEffect(() => {
-    //     getGameNames();
-        
-    // }, []);
     useEffect(() => {
-        getGameList();
+        // const abortController
+        getPageData();
+    
+        
     }, []);
 
     //upvote a game function
    const upvoteGame = async id => {
     try {
+        let headers = new Headers();
+        //headers.append('Access-Control-Allow-Origin', 'http://localhost:8081/');
+        //headers.append('Access-Control-Allow-Credentials', 'true');
+        headers.append('Content-Type', 'application/json');
         let body = { id
           }
         const requestOptions = {
             method: 'PATCH',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
+            mode: 'cors',
+            headers: headers,
             body: JSON.stringify(body)
         };
-        await fetch(`http://localhost:8080/gamevote/upvote`, requestOptions)
+        await fetch(`http://localhost:8080/groupvote/upvote`, requestOptions)
+          .then(response => response.json())
+          .then(response => {
+          if(response.status === "failed")
+          alert(response.message)})
+          
+          getGameList();
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  //downvote a game function
+  const downvoteGame = async id => {
+    try {
+        let headers = new Headers();
+        //headers.append('Access-Control-Allow-Origin', 'http://localhost:8081/');
+        //headers.append('Access-Control-Allow-Credentials', 'true');
+        headers.append('Content-Type', 'application/json');
+        let body = { id
+          }
+        const requestOptions = {
+            method: 'PATCH',
+            mode: 'cors',
+            headers: headers,
+            body: JSON.stringify(body)
+        };
+        await fetch(`http://localhost:8080/groupvote/downvote`, requestOptions)
           .then(response => response.json())
           .then(response => {
           if(response.status === "failed")
           alert(response.message)})
 
-          //window.location = "/";
-        // setServiceRequests(serviceRequests.filter(each => each.id !== id));
+          getGameList();
     } catch (err) {
       console.error(err.message);
     }
@@ -60,7 +94,7 @@ const ListGames = () => {
     return (
         <Fragment>
             {" "}
-            <table class="table mt-5 text-center">
+            <table className="table mt-5 text-center">
                 <thead>
                     <tr>
                         <th>Game Name</th>
@@ -77,7 +111,7 @@ const ListGames = () => {
                             <td>{each.gameVotes}</td>
                             <td>
                                 <button
-                                    type="button" class="btn btn-success"
+                                    type="button" className="btn btn-success"
                                     onClick= {() => upvoteGame(each.id)}
                                     >
                                     I Want to Play
@@ -85,8 +119,8 @@ const ListGames = () => {
                             </td>
                             <td>
                                 <button
-                                    type="button" class="btn btn-danger"
-                                    // onClick= {() => upvoteGame(each.id)}
+                                    type="button" className="btn btn-danger"
+                                    onClick= {() => downvoteGame(each.id)}
                                     >
                                     Hell no
                                 </button>

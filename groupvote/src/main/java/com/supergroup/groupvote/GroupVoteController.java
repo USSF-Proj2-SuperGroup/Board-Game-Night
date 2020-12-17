@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/groupvote")
 public class GroupVoteController {
     private final GroupVoteRepository repository;
@@ -17,6 +18,7 @@ public class GroupVoteController {
     public Iterable<GroupVote> list() {
         return this.repository.findAll();
     }
+
     @GetMapping("/{gameGroupID}")
     public List<GroupVote> read(@PathVariable int gameGroupID){
         return this.repository.findByGameGroupID(gameGroupID);
@@ -28,6 +30,7 @@ public class GroupVoteController {
         gv.setGameVotes(gv.getGameVotes() + 1);
         return this.repository.save(gv);
     }
+
     @PatchMapping("/downvote")
     public GroupVote downvote(@RequestBody GroupVote input){
         GroupVote gv = this.repository.findById(input.getId()).get();

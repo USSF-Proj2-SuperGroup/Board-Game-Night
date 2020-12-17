@@ -7,4 +7,6 @@ import java.util.List;
 public interface GroupVoteRepository extends CrudRepository<GroupVote, Integer> {
     List<GroupVote> findByGameGroupID(int gameGroupID);
 
+    @Query
+
 }
