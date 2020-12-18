@@ -1,11 +1,15 @@
 package com.BoardGameNight.registration.model;
 
+
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
+@Data
 @Entity
 @Table(name="game_groups")
 public class Group {
@@ -20,11 +24,8 @@ public class Group {
     @Size(max = 255)
     private String description;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "group_games",
-            joinColumns = @JoinColumn(name = "group_id"),
-            inverseJoinColumns = @JoinColumn(name = "game_id"))
-    private Set<Games> groupGames = new HashSet<>();
+    @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
+    private Set<GroupGames> groupGames = new HashSet<>();
 
     public Group() {
 
@@ -59,11 +60,11 @@ public class Group {
         this.description = description;
     }
 
-    public Set<Games> getGroupGames() {
+    public Set<GroupGames> getGroupGames() {
         return groupGames;
     }
 
-    public void setGroupGames(Set<Games> groupGames) {
+    public void setGroupGames(Set<GroupGames> groupGames) {
         this.groupGames = groupGames;
     }
 }
