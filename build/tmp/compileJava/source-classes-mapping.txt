@@ -1,0 +1,16 @@
+com/example/boardgamenightinventoryservice/Repositories/UserGameRepository.java
+ com.example.boardgamenightinventoryservice.Repositories.UserGameRepository
+com/example/boardgamenightinventoryservice/Controllers/UserGameController.java
+ com.example.boardgamenightinventoryservice.Controllers.UserGameController
+com/example/boardgamenightinventoryservice/User.java
+ com.example.boardgamenightinventoryservice.User
+com/example/boardgamenightinventoryservice/Repositories/UserRepository.java
+ com.example.boardgamenightinventoryservice.Repositories.UserRepository
+com/example/boardgamenightinventoryservice/Repositories/GameRepository.java
+ com.example.boardgamenightinventoryservice.Repositories.GameRepository
+com/example/boardgamenightinventoryservice/Game.java
+ com.example.boardgamenightinventoryservice.Game
+com/example/boardgamenightinventoryservice/BoardGameNightInventoryServiceApplication.java
+ com.example.boardgamenightinventoryservice.BoardGameNightInventoryServiceApplication
+com/example/boardgamenightinventoryservice/UserGame.java
+ com.example.boardgamenightinventoryservice.UserGame

@@ -7,14 +7,15 @@ import javax.persistence.*;
 public class UserGame {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     User userGames;
 
     @ManyToOne
-    @JoinColumn(name = "game_id")
+    @JoinColumn(name = "game_id", referencedColumnName = "id")
     Game gamesU;
 
     public String getGameApiId(){
