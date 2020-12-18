@@ -14,8 +14,9 @@ public class Game {
     @Column(name = "User_ID")
     int userID;
 
-//    @Column(name = "game_api_ID")
-//    String gameApiID;
+    @Column(columnDefinition = "TEXT", name = "game_api_ID")
+    String gameApiID;
+
     @Column(columnDefinition = "TEXT", name = "Game_Name")
     String gameName;
 
@@ -41,13 +42,13 @@ public class Game {
         this.userID = userID;
     }
 
-//    public String getGameApiID() {
-//        return gameApiID;
-//    }
-//
-//    public void setGameApiID(String gameApiID) {
-//        this.gameApiID = gameApiID;
-//    }
+    public String getGameApiID() {
+        return gameApiID;
+    }
+
+    public void setGameApiID(String gameApiID) {
+        this.gameApiID = gameApiID;
+    }
 
     public String getGameName() {
         return gameName;

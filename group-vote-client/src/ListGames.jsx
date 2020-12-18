@@ -1,18 +1,11 @@
 import React, { Fragment, useEffect, useState } from "react";
-import axios from 'axios';
 
 const ListGames = () => {
     const [gameList, setGameList] = useState([]);
-    const [gameNames, setGameNames] = useState([]);
-
-
-    const getPageData = async () => {
-        getGameNames();
-        getGameList();
-    }
+    
     const getGameList = async () => {
         try {
-            var id = 2;
+            var id = 3;
             const response = await fetch(`http://localhost:8080/groupvote/${id}`);
             const jsonData = await response.json();
       
@@ -21,29 +14,15 @@ const ListGames = () => {
             console.error(err.message);
           }
     };
-    const getGameNames = async () => {
-        try {
-            const response = await fetch(`http://localhost:8080/games`);
-            const jsonData = await response.json();
-            setGameNames(jsonData);
-        } catch (err) {
-            console.error(err.message);
-        }
-    };
 
     useEffect(() => {
-        // const abortController
-        getPageData();
-    
-        
+        getGameList();    
     }, []);
 
     //upvote a game function
    const upvoteGame = async id => {
     try {
         let headers = new Headers();
-        //headers.append('Access-Control-Allow-Origin', 'http://localhost:8081/');
-        //headers.append('Access-Control-Allow-Credentials', 'true');
         headers.append('Content-Type', 'application/json');
         let body = { id
           }
@@ -68,8 +47,7 @@ const ListGames = () => {
   const downvoteGame = async id => {
     try {
         let headers = new Headers();
-        //headers.append('Access-Control-Allow-Origin', 'http://localhost:8081/');
-        //headers.append('Access-Control-Allow-Credentials', 'true');
+        
         headers.append('Content-Type', 'application/json');
         let body = { id
           }
