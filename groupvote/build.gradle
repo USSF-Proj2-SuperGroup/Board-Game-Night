@@ -19,6 +19,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile group: 'org.springframework.data', name: 'spring-data-jdbc', version: '2.1.2'
 	runtimeOnly 'mysql:mysql-connector-java:8.0.20'
+	testImplementation 'org.apache.httpcomponents:httpclient'
 }
 
 test {
