@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "user_groups")
 public class UserGroups {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @ManyToOne

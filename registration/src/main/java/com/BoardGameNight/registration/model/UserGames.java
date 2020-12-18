@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "user_games")
 public class UserGames {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @ManyToOne

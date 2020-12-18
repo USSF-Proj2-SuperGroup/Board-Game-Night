@@ -1,9 +1,6 @@
 package com.BoardGameNight.registration.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,10 +9,12 @@ import java.util.Set;
 @Table(name="games")
 public class Games {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @NotBlank
-    private String game_api_id;
+    @Column(name = "game_api_id")
+    private String gameApiId;
 
     @NotBlank
     private String game_name;
@@ -32,21 +31,21 @@ public class Games {
     public Games() {
     }
 
-    public Games(@NotBlank String game_api_id, @NotBlank String game_name) {
-        this.game_api_id = game_api_id;
+    public Games(@NotBlank String gameApiId, @NotBlank String game_name) {
+        this.gameApiId = gameApiId;
         this.game_name = game_name;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
     public String getGame_api_id() {
-        return game_api_id;
+        return gameApiId;
     }
 
     public void setGame_api_id(String game_api_id) {
-        this.game_api_id = game_api_id;
+        this.gameApiId = game_api_id;
     }
 
     public String getGame_name() {
