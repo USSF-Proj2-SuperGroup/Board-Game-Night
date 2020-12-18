@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/inventory")
 public class UserGameController {
+
     @GetMapping("/")
     public String getIndex() {
         return "GET to index route";
