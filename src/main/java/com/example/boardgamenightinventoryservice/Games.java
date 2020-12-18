@@ -1,10 +1,11 @@
 package com.example.boardgamenightinventoryservice;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="games")
@@ -12,14 +13,12 @@ public class Games {
     @Id
     private String id;
 
-
     private String game_api_id;
-
 
     private String game_name;
 
-    public Games() {
-    }
+    @OneToMany(mappedBy = "games")
+    private Set<UserGames> userGames = new HashSet<>();
 
     public Games(String game_api_id, String game_name) {
         this.game_api_id = game_api_id;
@@ -33,7 +32,6 @@ public class Games {
     public String getGame_api_id() {
         return game_api_id;
     }
-
     public void setGame_api_id(String game_api_id) {
         this.game_api_id = game_api_id;
     }
@@ -41,7 +39,6 @@ public class Games {
     public String getGame_name() {
         return game_name;
     }
-
     public void setGame_name(String game_name) {
         this.game_name = game_name;
     }

@@ -1,6 +1,5 @@
 package com.example.boardgamenightinventoryservice;
 
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,28 +22,22 @@ public class User {
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_roles",
+    @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_games",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "game_id"))
-    private Set<Games> games = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<UserGames> userGames = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_wishlist",
+    @JoinTable(	name = "user_wishlist",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "game_id"))
     private Set<Games> wishlist = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY)
     private Set<Group> groups = new HashSet<>();
-
-    public User() {
-    }
 
     public User(String username, String email, String password) {
         this.username = username;
@@ -55,7 +48,6 @@ public class User {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -63,7 +55,6 @@ public class User {
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -71,7 +62,6 @@ public class User {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -79,7 +69,6 @@ public class User {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -87,23 +76,20 @@ public class User {
     public Set<Role> getRoles() {
         return roles;
     }
-
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 
-    public Set<Games> getGames() {
-        return games;
+    public Set<UserGames> getGames() {
+        return userGames;
     }
-
-    public void setGames(Set<Games> games) {
-        this.games = games;
+    public void setGames(Set<UserGames> userGames) {
+        this.userGames = userGames;
     }
 
     public Set<Games> getWishlist() {
         return wishlist;
     }
-
     public void setWishlist(Set<Games> wishlist) {
         this.wishlist = wishlist;
     }
@@ -111,7 +97,6 @@ public class User {
     public Set<Group> getGroups() {
         return groups;
     }
-
     public void setGroups(Set<Group> groups) {
         this.groups = groups;
     }
