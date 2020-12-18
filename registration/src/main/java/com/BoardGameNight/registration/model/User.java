@@ -37,17 +37,14 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userGames")
     private Set<UserGames> userGames = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "user_wishlist",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "game_id"))
-    private Set<Games> wishlist = new HashSet<>();
+    @OneToMany(mappedBy = "userWishlist")
+    private Set<UserWishlist> wishlist = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private Set<Group> groups = new HashSet<>();
+    @OneToMany(mappedBy = "userGroup")
+    private Set<UserGroups> groups = new HashSet<>();
 
     public User() {
     }
@@ -106,19 +103,19 @@ public class User {
         this.userGames = userGames;
     }
 
-    public Set<Games> getWishlist() {
+    public Set<UserWishlist> getWishlist() {
         return wishlist;
     }
 
-    public void setWishlist(Set<Games> wishlist) {
+    public void setWishlist(Set<UserWishlist> wishlist) {
         this.wishlist = wishlist;
     }
 
-    public Set<Group> getGroups() {
+    public Set<UserGroups> getGroups() {
         return groups;
     }
 
-    public void setGroups(Set<Group> groups) {
+    public void setGroups(Set<UserGroups> groups) {
         this.groups = groups;
     }
 }

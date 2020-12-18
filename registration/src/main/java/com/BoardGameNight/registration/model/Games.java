@@ -20,9 +20,14 @@ public class Games {
     @NotBlank
     private String game_name;
 
-    @OneToMany(mappedBy = "games")
+    @OneToMany(mappedBy = "gamesU")
     private Set<UserGames> userGames = new HashSet<>();
 
+    @OneToMany(mappedBy = "gamesW")
+    private Set<UserWishlist> userWishlist = new HashSet<>();
+
+    @OneToMany(mappedBy = "gamesG")
+    private Set<GroupGames> groupGames = new HashSet<>();
 
     public Games() {
     }
@@ -50,5 +55,29 @@ public class Games {
 
     public void setGame_name(String game_name) {
         this.game_name = game_name;
+    }
+
+    public Set<UserGames> getUserGames() {
+        return userGames;
+    }
+
+    public void setUserGames(Set<UserGames> userGames) {
+        this.userGames = userGames;
+    }
+
+    public Set<UserWishlist> getUserWishlist() {
+        return userWishlist;
+    }
+
+    public void setUserWishlist(Set<UserWishlist> userWishlist) {
+        this.userWishlist = userWishlist;
+    }
+
+    public Set<GroupGames> getGroupGames() {
+        return groupGames;
+    }
+
+    public void setGroupGames(Set<GroupGames> groupGames) {
+        this.groupGames = groupGames;
     }
 }

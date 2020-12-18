@@ -11,14 +11,14 @@ public class UserGames {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    User user;
+    User userGames;
 
     @ManyToOne
     @JoinColumn(name = "games_id")
-    Games games;
+    Games gamesU;
 
     public String getGameApiId(){
-        return games.getGame_api_id();
+        return gamesU.getGame_api_id();
     }
 
     public Long getId() {
@@ -29,19 +29,19 @@ public class UserGames {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public User getUserGames() {
+        return userGames;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserGames(User userGames) {
+        this.userGames = userGames;
     }
 
-    public Games getGames() {
-        return games;
+    public Games getGamesU() {
+        return gamesU;
     }
 
-    public void setGames(Games games) {
-        this.games = games;
+    public void setGamesU(Games gamesU) {
+        this.gamesU = gamesU;
     }
 }

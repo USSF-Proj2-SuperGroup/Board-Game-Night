@@ -11,9 +11,37 @@ public class UserGroups {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    User user;
+    User userGroup;
 
     @ManyToOne
     @JoinColumn(name = "group_id")
-    Group group;
+    Group groupU;
+
+    public String getName(){
+        return groupU.getName();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUserGroup() {
+        return userGroup;
+    }
+
+    public void setUserGroup(User userGroup) {
+        this.userGroup = userGroup;
+    }
+
+    public Group getGroupU() {
+        return groupU;
+    }
+
+    public void setGroupU(Group groupU) {
+        this.groupU = groupU;
+    }
 }

@@ -4,6 +4,8 @@ package com.BoardGameNight.registration.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="game_groups")
@@ -18,6 +20,12 @@ public class Group {
 
     @Size(max = 255)
     private String description;
+
+    @OneToMany(mappedBy = "groupU")
+    private Set<UserGroups> userGroups = new HashSet<>();
+
+    @OneToMany(mappedBy = "groupG")
+    private Set<GroupGames> groupGames = new HashSet<>();
 
     public Group() {
 
@@ -52,5 +60,20 @@ public class Group {
         this.description = description;
     }
 
+    public Set<UserGroups> getUserGroups() {
+        return userGroups;
+    }
+
+    public void setUserGroups(Set<UserGroups> userGroups) {
+        this.userGroups = userGroups;
+    }
+
+    public Set<GroupGames> getGroupGames() {
+        return groupGames;
+    }
+
+    public void setGroupGames(Set<GroupGames> groupGames) {
+        this.groupGames = groupGames;
+    }
 }
 

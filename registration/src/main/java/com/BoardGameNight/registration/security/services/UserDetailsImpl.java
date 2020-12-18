@@ -1,8 +1,8 @@
 package com.BoardGameNight.registration.security.services;
 
-import com.BoardGameNight.registration.model.Group;
 import com.BoardGameNight.registration.model.User;
 import com.BoardGameNight.registration.model.UserGames;
+import com.BoardGameNight.registration.model.UserGroups;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -30,9 +30,9 @@ public class UserDetailsImpl implements UserDetails {
 
     private Set<UserGames> games;
 
-    private Set<Group> groups;
+    private Set<UserGroups> groups;
 
-    public UserDetailsImpl(Long id, String username, String email, String password, Set<UserGames> games, Set<Group> groups,
+    public UserDetailsImpl(Long id, String username, String email, String password, Set<UserGames> games, Set<UserGroups> groups,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
@@ -68,7 +68,7 @@ public class UserDetailsImpl implements UserDetails {
         return games;
     }
 
-    public Set<Group> getGroups() {
+    public Set<UserGroups> getGroups() {
         return groups;
     }
 
