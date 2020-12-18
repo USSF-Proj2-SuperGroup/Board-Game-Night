@@ -85,7 +85,7 @@ const ListGames = () => {
                     {gameList.map(each => (
                         <tr key = {each.id}>
                             {/* <td>{gameNames[each.gameID - 1].gameName}</td> */}
-                            <td>{each.gameID}</td>
+                            <td>{each.game.gameName}</td>
                             <td>{each.gameVotes}</td>
                             <td>
                                 <button

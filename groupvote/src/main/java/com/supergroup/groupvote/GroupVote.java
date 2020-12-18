@@ -1,6 +1,10 @@
 package com.supergroup.groupvote;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Game_Pool")
@@ -14,11 +18,21 @@ public class GroupVote {
     @Column(name = "Game_Group_ID")
     int gameGroupID;
 
-    @Column(name = "Game_ID")
-    int gameID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Game_ID", insertable = false, updatable = false)
+    @Fetch(FetchMode.JOIN)
+    private Game game;
 
     @Column(name = "Game_votes")
     int gameVotes;
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 
     public Integer getId() {
         return id;
@@ -34,14 +48,6 @@ public class GroupVote {
 
     public void setGameGroupID(int gameGroupID) {
         this.gameGroupID = gameGroupID;
-    }
-
-    public int getGameID() {
-        return gameID;
-    }
-
-    public void setGameID(int gameID) {
-        this.gameID = gameID;
     }
 
     public int getGameVotes() {
