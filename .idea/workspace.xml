@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="770ac151-6243-49e6-a568-72ec155717e5" name="Default Changelist" comment="somehow these weren't added during my earlier commits?">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/ERole.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Games.java" afterDir="false" />
@@ -29,6 +30,9 @@
     </list>
     <list id="5ff60711-2414-4928-9d4f-44a2f213570a" name="Changes by gregoryoladipo" comment="" />
     <list id="2ad7bea6-e40b-46de-bd3d-abfcf35b2027" name="Changes by Robert" comment="" />
+=======
+    <list default="true" id="b8c39552-e480-4d3b-870a-f0397dc01d8c" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +76,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+<<<<<<< Updated upstream
     <option name="projectConfigVersion" value="2" />
+=======
+>>>>>>> Stashed changes
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -81,12 +88,21 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+<<<<<<< Updated upstream
                     <option name="branchName" value="inventory-service" />
                     <option name="lastUsedInstant" value="1608130451" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
                     <option name="lastUsedInstant" value="1608076539" />
+=======
+                    <option name="branchName" value="registration-frontend" />
+                    <option name="lastUsedInstant" value="1608310678" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="inventory-service" />
+                    <option name="lastUsedInstant" value="1608310677" />
+>>>>>>> Stashed changes
                   </RecentBranch>
                 </list>
               </option>
@@ -97,7 +113,11 @@
       </RecentBranches>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectId" id="1li95gJ711N7Fay3450R5eXcxpw" />
+=======
+  <component name="ProjectId" id="1ln2J8b7cTa0bgq9J8fnEd5f15l" />
+>>>>>>> Stashed changes
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -195,6 +215,7 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added springboot files and folders" />
     <MESSAGE value="started on mysql integration" />
@@ -212,4 +233,6 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+=======
+>>>>>>> Stashed changes
 </project>

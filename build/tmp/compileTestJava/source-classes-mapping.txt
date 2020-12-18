@@ -1,0 +1,2 @@
+com/example/boardgamenightinventoryservice/BoardGameNightInventoryServiceApplicationTests.java
+ com.example.boardgamenightinventoryservice.BoardGameNightInventoryServiceApplicationTests

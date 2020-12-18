@@ -1,0 +1,30 @@
+com/example/boardgamenightinventoryservice/ERole.java
+ com.example.boardgamenightinventoryservice.ERole
+com/example/boardgamenightinventoryservice/User.java
+ com.example.boardgamenightinventoryservice.User
+com/example/boardgamenightinventoryservice/RoleRepository.java
+ com.example.boardgamenightinventoryservice.RoleRepository
+com/example/boardgamenightinventoryservice/InventoryController.java
+ com.example.boardgamenightinventoryservice.InventoryController
+com/example/boardgamenightinventoryservice/UserGames.java
+ com.example.boardgamenightinventoryservice.UserGames
+com/example/boardgamenightinventoryservice/GroupRepository.java
+ com.example.boardgamenightinventoryservice.GroupRepository
+com/example/boardgamenightinventoryservice/Role.java
+ com.example.boardgamenightinventoryservice.Role
+com/example/boardgamenightinventoryservice/UserRepository.java
+ com.example.boardgamenightinventoryservice.UserRepository
+com/example/boardgamenightinventoryservice/GamesController.java
+ com.example.boardgamenightinventoryservice.GamesController
+com/example/boardgamenightinventoryservice/Group.java
+ com.example.boardgamenightinventoryservice.Group
+com/example/boardgamenightinventoryservice/Games.java
+ com.example.boardgamenightinventoryservice.Games
+com/example/boardgamenightinventoryservice/GamesRepository.java
+ com.example.boardgamenightinventoryservice.GamesRepository
+com/example/boardgamenightinventoryservice/UserController.java
+ com.example.boardgamenightinventoryservice.UserController
+com/example/boardgamenightinventoryservice/UserGroups.java
+ com.example.boardgamenightinventoryservice.UserGroups
+com/example/boardgamenightinventoryservice/BoardGameNightInventoryServiceApplication.java
+ com.example.boardgamenightinventoryservice.BoardGameNightInventoryServiceApplication

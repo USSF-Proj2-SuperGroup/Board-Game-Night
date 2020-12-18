@@ -4,6 +4,7 @@ CREATE DATABASE IF NOT EXISTS `games_test`;
 CREATE USER IF NOT EXISTS 'root'@'localhost' IDENTIFIED BY 'local';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 
+<<<<<<< Updated upstream
 DROP TABLE IF EXISTS Game_Group;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Games;
@@ -106,6 +107,85 @@ INSERT INTO Games (User_ID, game_api_ID, Game_Name, In_Game_Pool, In_Wishlist)
 VALUES (5, 'FVKaz7JhBO', 'Cosmic Encounter', false, false);
 INSERT INTO Games (User_ID, game_api_ID, Game_Name, In_Game_Pool, In_Wishlist)
 VALUES (5, '5tnoVda0AY', 'Twilight Imperium: Fourth Edition', false, false);
+=======
+DROP TABLE IF EXISTS Game_Pool;
+DROP TABLE IF EXISTS Games;
+DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS game_groups;
+DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS group_games;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS user_games;
+DROP TABLE IF EXISTS user_roles;
+DROP TABLE IF EXISTS user_wishlist;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users_groups;
+
+CREATE TABLE game_groups(
+	id INTEGER AUTO_INCREMENT,
+	name TEXT NOT NULL,
+	description TEXT,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE users(
+	id INTEGER AUTO_INCREMENT,
+	username VARCHAR(50) UNIQUE NOT NULL,
+	email VARCHAR(50) UNIQUE NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE games(
+	id INTEGER AUTO_INCREMENT,
+	game_api_id TEXT NOT NULL,
+	game_name TEXT NOT NULL,
+	PRIMARY KEY (id)
+);
+
+
+INSERT INTO game_groups (name, description) VALUES ('Friday Night Fun', 'The Best Friday Group');
+INSERT INTO game_groups (name, description) VALUES ('Sunday Funday', 'Board games and Sports? Whats better!');
+INSERT INTO game_groups (name, description) VALUES ('Saturday Showdown', 'Where its western games only!');
+
+
+INSERT INTO users (id, username, email, password)
+VALUES (1, 'Rob', 'rob@us.af.mil', 'MyPassword');
+INSERT INTO users (id, username, email, password)
+VALUES (1, 'Peter', 'peter@us.af.mil', 'MyPassword2');
+INSERT INTO users (id, username, email, password)
+VALUES (2, 'Ben', 'ben@us.af.mil', 'MyPassword3');
+INSERT INTO users (id, username, email, password)
+VALUES (2, 'Donna', 'donna@us.af.mil', 'MyPassword4');
+INSERT INTO users (id, username, email, password)
+VALUES (3, 'Dameon', 'dameon@us.af.mil', 'MyPassword5');
+
+
+INSERT INTO games (game_api_id, game_name)
+VALUES ('OIXt3DmJU0', 'Catan');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('T5lx9elSDt', 'Love Letter');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('jYcMsxI5zP', 'Horrified');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('fG5Ax8PA7n', 'Monopoly');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('WVgc4bUL8N', 'Clue');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('6FmFeux5xH', 'Pandemic');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('3Qx47A4K8M', 'Rummikub');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('5e5qeOvkp3', 'Elder Sign');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('OCv0s54FtD', 'the Game of Life');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('hQLfeykeLS', 'Phase 10');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('FVKaz7JhBO', 'Cosmic Encounter');
+INSERT INTO games (game_api_id, game_name)
+VALUES ('5tnoVda0AY', 'Twilight Imperium: Fourth Edition');
+>>>>>>> Stashed changes
 
 
 INSERT INTO Game_Pool (Game_Group_ID, Game_ID, Game_votes)
