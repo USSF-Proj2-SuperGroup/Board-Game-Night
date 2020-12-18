@@ -37,11 +37,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "user_games",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "game_id"))
-    private Set<Games> games = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<UserGames> userGames = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_wishlist",
@@ -101,12 +98,12 @@ public class User {
         this.roles = roles;
     }
 
-    public Set<Games> getGames() {
-        return games;
+    public Set<UserGames> getGames() {
+        return userGames;
     }
 
-    public void setGames(Set<Games> games) {
-        this.games = games;
+    public void setGames(Set<UserGames> userGames) {
+        this.userGames = userGames;
     }
 
     public Set<Games> getWishlist() {

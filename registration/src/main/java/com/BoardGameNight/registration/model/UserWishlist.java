@@ -1,4 +1,4 @@
 package com.BoardGameNight.registration.model;
 
-public class GroupGames {
+public class UserWishlist {
 }
