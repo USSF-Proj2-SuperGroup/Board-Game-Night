@@ -10,21 +10,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/board-game-night-inventory-service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/board-game-night-inventory-service.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/board-game-night-inventory-service.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Games.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/boardgamenightinventoryservice/BoardGameNightInventoryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/boardgamenightinventoryservice/BoardGamesNightUsersGamesServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

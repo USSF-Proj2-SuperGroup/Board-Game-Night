@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 //TODO: get current userID
@@ -19,21 +20,21 @@ public class UserGamesController {
     @Autowired
     private final UserGamesRepository repository;
 
-    private Integer currentUserID = 1; // read local storage
+    private Integer currentUserID = 4; // read local storage
 
     public UserGamesController(UserGamesRepository repository) {
         this.repository = repository;
     }
 
     @GetMapping("/all") //Get Games by User:
-    public Iterable<UserGames> all() {
-        return this.repository.findUserGamesByUserId(currentUserID);
+    public Iterable<Object[]> all() {
+        return this.repository.findUserGames(currentUserID);
     }
 
-//    @GetMapping("/sort") //Sort Inventory Alphabetically by Game Name:
-//    public Iterable<UserGames> sort() {
-//        return this.repository.sortUserGames(currentUserID, Sort.by("game_name").descending());
-//    }
+    @GetMapping("/sort") //Sort Inventory Alphabetically by Game Name:
+    public Iterable<Object[]> sort() {
+        return this.repository.sortUserGames(currentUserID);
+    }
 
 //    @GetMapping("/filter") //Filter Inventory By In_Game_Pool:
 //    public Iterable<UserGames> filter() {
