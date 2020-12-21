@@ -7,23 +7,28 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Game_Pool")
+@Table(name = "group_games")
 public class GroupVote {
     //Pool_ID | Game_Group_ID | Game_ID | Game_votes
     @Id
-    @Column(name = "Pool_ID")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    Long id;
 
-    @Column(name = "Game_Group_ID")
-    int gameGroupID;
+
+
+    @Column(name = "group_id")
+    int groupId;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "group_id", insertable = false, updatable = false)
+//    private GameGroup gameGroup;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Game_ID", insertable = false, updatable = false)
+    @JoinColumn(name = "games_id", insertable = false, updatable = false)
     @Fetch(FetchMode.JOIN)
     private Game game;
 
-    @Column(name = "Game_votes")
+    @Column(name = "votes")
     int gameVotes;
 
     public Game getGame() {
@@ -34,20 +39,12 @@ public class GroupVote {
         this.game = game;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getGameGroupID() {
-        return gameGroupID;
-    }
-
-    public void setGameGroupID(int gameGroupID) {
-        this.gameGroupID = gameGroupID;
     }
 
     public int getGameVotes() {
@@ -56,6 +53,20 @@ public class GroupVote {
 
     public void setGameVotes(int gameVotes) {
         this.gameVotes = gameVotes;
+    }
+//    public GameGroup getGameGroup() {
+//        return gameGroup;
+//    }
+//
+//    public void setGameGroup(GameGroup gameGroup) {
+//        this.gameGroup = gameGroup;
+//    }
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 
 

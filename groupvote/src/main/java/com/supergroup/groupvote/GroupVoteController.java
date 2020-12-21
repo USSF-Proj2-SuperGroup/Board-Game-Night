@@ -20,9 +20,9 @@ public class GroupVoteController {
         return this.repository.findAll();
     }
 
-    @GetMapping("/{gameGroupID}")
-    public List<GroupVote> read(@PathVariable int gameGroupID){
-        return this.repository.findByGameGroupID(gameGroupID);
+    @GetMapping("/{groupId}")
+    public List<GroupVote> read(@PathVariable int groupId){
+        return this.repository.findByGroupId(groupId);
     }
 
     @PatchMapping("/upvote")

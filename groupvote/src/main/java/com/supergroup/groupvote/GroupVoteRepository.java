@@ -6,7 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Collection;
 import java.util.List;
 
-public interface GroupVoteRepository extends CrudRepository<GroupVote, Integer> {
-    List<GroupVote> findByGameGroupID(int gameGroupID);
+public interface GroupVoteRepository extends CrudRepository<GroupVote, Long> {
+//    List<GroupVote> findByGameGroupId(int gg);
+    List<GroupVote> findByGroupId(int groupId);
 
 }

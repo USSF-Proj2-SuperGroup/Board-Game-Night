@@ -3,28 +3,20 @@ package com.supergroup.groupvote;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Games")
+@Table(name = "games")
 public class Game {
     //Game_ID | User_ID | game_api_ID | Game_Name                         | In_Game_Pool | In_Wishlist
     @Id
-    @Column(name = "Game_ID")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
-    @Column(name = "User_ID")
-    int userID;
-
-    @Column(columnDefinition = "TEXT", name = "game_api_ID")
+    @Column(name = "game_api_id")
     String gameApiID;
 
-    @Column(columnDefinition = "TEXT", name = "Game_Name")
+    @Column(name = "game_name")
     String gameName;
 
-    @Column(name = "In_Game_Pool")
-    boolean inGamePool;
-
-    @Column(name = "In_Wishlist")
-    boolean inWishlist;
 
     public Integer getId() {
         return id;
@@ -32,14 +24,6 @@ public class Game {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
     }
 
     public String getGameApiID() {
@@ -57,26 +41,5 @@ public class Game {
     public void setGameName(String gameName) {
         this.gameName = gameName;
     }
-
-    public boolean isInGamePool() {
-        return inGamePool;
-    }
-
-    public void setInGamePool(boolean inGamePool) {
-        this.inGamePool = inGamePool;
-    }
-
-    public boolean isInWishlist() {
-        return inWishlist;
-    }
-
-    public void setInWishlist(boolean inWishlist) {
-        this.inWishlist = inWishlist;
-    }
-
-
-
-
-
 
 }
