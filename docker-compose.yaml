@@ -11,7 +11,7 @@ services:
       # Mount a local directory to persist the database after
       # removal of the container.  Note, actual volume is
       # defined below
-      - games-data:/home/robert/project2/database
+      - games-data:/var/lib/mysql
     environment: # Environment variables required by the image
       MYSQL_ROOT_PASSWORD: my-secret-pw
       MYSQL_DATABASE: mydb
