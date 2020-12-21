@@ -1,13 +1,8 @@
 package com.example.boardgamenightinventoryservice;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
-import java.util.Objects;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called InventoryRepository
 // CRUD refers Create, Read, Update, Delete
