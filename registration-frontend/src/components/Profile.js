@@ -8,7 +8,7 @@ const Profile = () => {
     <div className="container">
       <header className="jumbotron">
         <h3>
-          <strong>{currentUser.username}</strong> Profile
+          <strong>{currentUser.username}'s</strong> Profile
         </h3>
       </header>
       <p>
@@ -33,6 +33,11 @@ const Profile = () => {
           currentUser.groups.map((groups, index) => <li key={index}>{groups}</li>)}
       </ul>
       </p>
+      <strong>Games:</strong>
+      <ul>
+        {currentUser.games &&
+          currentUser.gamesApiId.map((games, index) => <li key={index}>{games}</li>)}
+      </ul>
     </div>
   );
 };

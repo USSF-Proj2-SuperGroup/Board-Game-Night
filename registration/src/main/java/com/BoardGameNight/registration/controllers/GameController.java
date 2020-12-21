@@ -54,7 +54,7 @@ public class GameController {
     }
     @PostMapping("/add/group-game")
     public ResponseEntity<?> newGroupGame(@RequestBody GroupGameRequest groupGameRequest){
-        if(groupGamesRepository.g(groupGameRequest.getGamesG())) {
+        if(groupGamesRepository.existsByGamesG(groupGameRequest.getGamesG())) {
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse("Error: This game is already in the the game night pool!"));

@@ -33,6 +33,8 @@ public class UserGames {
         return gamesU.getGame_api_id();
     }
 
+    public String getGameName() {return gamesU.getGame_name();}
+
     public Long getId() {
         return id;
     }

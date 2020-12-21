@@ -8,15 +8,17 @@ public class JwtResponse {
     private Long id;
     private String username;
     private String email;
+    private List<String> gamesApiId;
     private List<String> games;
     private List<String> groups;
     private List<String> roles;
 
-    public JwtResponse(String accessToken, Long id, String username, String email, List<String> games, List<String> groups, List<String> roles) {
+    public JwtResponse(String accessToken, Long id, String username, String email, List<String> gamesApiId, List<String> games, List<String> groups, List<String> roles) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
+        this.gamesApiId = gamesApiId;
         this.games = games;
         this.groups = groups;
         this.roles = roles;
@@ -80,5 +82,13 @@ public class JwtResponse {
 
     public void setGroups(List<String> groups) {
         this.groups = groups;
+    }
+
+    public List<String> getGamesApiId() {
+        return gamesApiId;
+    }
+
+    public void setGamesApiId(List<String> gamesApiId) {
+        this.gamesApiId = gamesApiId;
     }
 }

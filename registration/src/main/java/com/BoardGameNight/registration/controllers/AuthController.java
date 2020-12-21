@@ -59,6 +59,9 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
         List<String> games = userDetails.getGames().stream()
+                .map(game -> game.getGameName())
+                .collect(Collectors.toList());
+        List<String> gamesApiId = userDetails.getGames().stream()
                 .map(game -> game.getGameApiId())
                 .collect(Collectors.toList());
         List<String> groups = userDetails.getGroups().stream()
@@ -70,6 +73,7 @@ public class AuthController {
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 games,
+                gamesApiId,
                 groups,
                 roles));
     }

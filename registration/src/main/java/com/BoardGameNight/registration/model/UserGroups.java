@@ -1,8 +1,12 @@
 package com.BoardGameNight.registration.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 
 @Entity
+@EqualsAndHashCode(exclude = {"userGroup","groupU"})
 @Table(name = "user_groups")
 public class UserGroups {
     @Id
@@ -11,6 +15,7 @@ public class UserGroups {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties("userGroup")
     User userGroup;
 
     @ManyToOne

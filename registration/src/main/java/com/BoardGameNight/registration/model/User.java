@@ -1,5 +1,8 @@
 package com.BoardGameNight.registration.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -8,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@EqualsAndHashCode(exclude = {"userGames","wishlist","groups"})
 @Table(	name = "users",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "username"),
@@ -38,12 +42,15 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "userGames")
+    @JsonIgnoreProperties("userGames")
     private Set<UserGames> userGames = new HashSet<>();
 
     @OneToMany(mappedBy = "userWishlist")
+    @JsonIgnoreProperties("wishlist")
     private Set<UserWishlist> wishlist = new HashSet<>();
 
     @OneToMany(mappedBy = "userGroup")
+    @JsonIgnoreProperties("groups")
     private Set<UserGroups> groups = new HashSet<>();
 
     public User() {

@@ -1,6 +1,9 @@
 package com.BoardGameNight.registration.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -8,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@EqualsAndHashCode(exclude = {"userGroups", "groupGames"})
 @Table(name="game_groups")
 public class Group {
     @Id
@@ -22,9 +26,11 @@ public class Group {
     private String description;
 
     @OneToMany(mappedBy = "groupU")
+    @JsonIgnoreProperties("userGroup")
     private Set<UserGroups> userGroups = new HashSet<>();
 
     @OneToMany(mappedBy = "groupG")
+    @JsonIgnoreProperties("groupG")
     private Set<GroupGames> groupGames = new HashSet<>();
 
     public Group() {
