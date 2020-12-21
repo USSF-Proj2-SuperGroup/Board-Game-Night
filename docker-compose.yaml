@@ -14,7 +14,7 @@ services:
       - games-data:/home/robert/project2/database
     environment: # Environment variables required by the image
       MYSQL_ROOT_PASSWORD: my-secret-pw
-      MYSQL_DATABASE: mydb
+      MYSQL_DATABASE: game_night
 
 # Add more services here
 

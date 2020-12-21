@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770ac151-6243-49e6-a568-72ec155717e5" name="Default Changelist" comment="somehow these weren't added during my earlier commits?">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/User.java" afterDir="false" />
+    <list default="true" id="66155388-c780-4ed7-8432-f22dff67c0c6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -13,14 +12,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/board-game-night-inventory-service.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/board-game-night-inventory-service.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/board-game-night-inventory-service.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/BoardGameNightInventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/BoardGameNightInventoryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Games.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/UserGamesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/boardgamenightinventoryservice/BoardGameNightInventoryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/boardgamenightinventoryservice/BoardGamesNightUsersGamesServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +44,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="board-game-night-inventory-service" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -145,7 +144,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="770ac151-6243-49e6-a568-72ec155717e5" name="Default Changelist" comment="" />
+      <changelist id="66155388-c780-4ed7-8432-f22dff67c0c6" name="Default Changelist" comment="" />
       <created>1608068865461</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -192,16 +191,5 @@
     <MESSAGE value="started on mysql integration" />
     <MESSAGE value="somehow these weren't added during my earlier commits?" />
     <option name="LAST_COMMIT_MESSAGE" value="somehow these weren't added during my earlier commits?" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/boardgamenightinventoryservice/InventoryController.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
