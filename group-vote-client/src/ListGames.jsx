@@ -5,7 +5,7 @@ const ListGames = () => {
     
     const getGameList = async () => {
         try {
-            var id = 3;
+            var id = 1;
             const response = await fetch(`http://localhost:8080/groupvote/${id}`);
             const jsonData = await response.json();
       
@@ -84,7 +84,6 @@ const ListGames = () => {
                 <tbody>
                     {gameList.map(each => (
                         <tr key = {each.id}>
-                            {/* <td>{gameNames[each.gameID - 1].gameName}</td> */}
                             <td>{each.game.gameName}</td>
                             <td>{each.gameVotes}</td>
                             <td>
