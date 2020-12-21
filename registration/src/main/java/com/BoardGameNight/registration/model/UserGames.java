@@ -17,6 +17,18 @@ public class UserGames {
     @JoinColumn(name = "games_id")
     Games gamesU;
 
+    public UserGames(User userGames, Games gamesU) {
+        this.userGames = userGames;
+        this.gamesU = gamesU;
+    }
+
+    public UserGames() {
+    }
+
+    public UserGames(String gameId, String userId) {
+
+    }
+
     public String getGameApiId(){
         return gamesU.getGame_api_id();
     }

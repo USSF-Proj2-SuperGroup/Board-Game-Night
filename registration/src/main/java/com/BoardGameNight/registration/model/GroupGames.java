@@ -20,6 +20,13 @@ public class GroupGames {
     @Column
     private Integer votes;
 
+    public GroupGames(Long id, Group groupG, Games gamesG, Integer votes) {
+        this.id = id;
+        this.groupG = groupG;
+        this.gamesG = gamesG;
+        this.votes = votes;
+    }
+
     public Long getId() {
         return id;
     }
