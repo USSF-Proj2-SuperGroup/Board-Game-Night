@@ -1,14 +1,7 @@
 package com.example.boardgamenightinventoryservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 //TODO: get current userID
 // user ID will likely be passed in via HTTP response...
@@ -20,7 +13,7 @@ public class UserGamesController {
     @Autowired
     private final UserGamesRepository repository;
 
-    private Integer currentUserID = 4; // read local storage
+    private Integer currentUserID = 4; // read local storage on client-side with JS, then pass it back to the server-side
 
     public UserGamesController(UserGamesRepository repository) {
         this.repository = repository;

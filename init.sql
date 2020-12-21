@@ -194,7 +194,7 @@ INSERT INTO games (game_api_id, game_name) VALUES ('WVgc4bUL8N', 'Clue');
 INSERT INTO games (game_api_id, game_name) VALUES ('6FmFeux5xH', 'Pandemic');
 INSERT INTO games (game_api_id, game_name) VALUES ('3Qx47A4K8M', 'Rummikub');
 INSERT INTO games (game_api_id, game_name) VALUES ('5e5qeOvkp3', 'Elder Sign');
-INSERT INTO games (game_api_id, game_name) VALUES ('OCv0s54FtD', 'the Game of Life');
+INSERT INTO games (game_api_id, game_name) VALUES ('OCv0s54FtD', 'The Game of Life');
 INSERT INTO games (game_api_id, game_name) VALUES ('hQLfeykeLS', 'Phase 10');
 INSERT INTO games (game_api_id, game_name) VALUES ('FVKaz7JhBO', 'Cosmic Encounter');
 INSERT INTO games (game_api_id, game_name) VALUES ('5tnoVda0AY', 'Twilight Imperium: Fourth Edition');
